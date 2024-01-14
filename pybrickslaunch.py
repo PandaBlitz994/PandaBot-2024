@@ -1,9 +1,10 @@
-HUB_NAME = "Pybricks Hub"
+HUB_NAME = "Controller2"
 
 import os
 import subprocess
 
 target = os.getenv("TARGET")
+print(target)
 command = f"pybricksdev run ble --name {HUB_NAME} {target}"
 
 try:
