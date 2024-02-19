@@ -14,22 +14,36 @@ chassis = DriveBase(left_motor, right_motor, 56, 114)
 chassis.use_gyro(True)
 
 
+def run9():
+    chassis.settings(straight_speed=400)
+    chassis.drive(900, 0)
+
+        
+        
+
 def run1():
     chassis.settings(straight_speed=180)
 
     chassis.straight(500)
-    right_arm.run_angle(150, 150)
+    right_arm.run_angle(150, 135)
     chassis.straight(-500)
 
 
 def run2():
-    chassis.straight(100)
-    right_arm.run_angle(350, -600)
+    chassis.settings(straight_speed=150)
+    chassis.straight(315)
+    right_arm.run_angle(speed=120, rotation_angle=130)
+    chassis.drive(200, 0)
+    wait(2000)
+    chassis.brake()
+    left_arm.run_time(speed=400, time=4000)
+    chassis.settings(straight_speed=400)
+    chassis.straight(distance=-450)
 
 
 def run3():
     left_arm.run_angle(400, 90)
-
+    
 
 def stats():
     precent = hub.battery.current() / 2100 * 100
@@ -37,7 +51,9 @@ def stats():
     print("battery: ", precent, "%")
 
 
-selected = hub_menu(1, 2, 3, 99)
+
+
+selected = hub_menu(1, 2, 3, 99, 9)
 
 
 if selected == 1:
@@ -48,3 +64,5 @@ elif selected == 3:
     run3()
 elif selected == 99:
     stats()
+elif selected == 9:
+    run9()
