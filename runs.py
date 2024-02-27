@@ -42,8 +42,12 @@ def run2():
 
 
 def run3():
-    left_arm.run_angle(400, 90)
-    
+    chassis.settings(straight_speed=350)
+    chassis.straight(500)
+    chassis.straight(100)
+
+def run4():
+    pass
 
 def stats():
     precent = hub.battery.current() / 2100 * 100
