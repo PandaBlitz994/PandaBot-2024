@@ -154,6 +154,7 @@ def run33():
     chassis.straight(30)
     chassis.turn(60)
     chassis.straight(310)
+    right_arm.run_angle(200,100)
 
 
 def run4():
