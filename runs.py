@@ -51,6 +51,13 @@ def run9():
         
         
 
+def run9():
+    chassis.settings(straight_speed=400)
+    chassis.drive(900, 0)
+
+        
+        
+
 def run1():
     chassis.settings(straight_speed=180)
     chassis.straight(500)
@@ -65,7 +72,7 @@ def run2():
     chassis.drive(200, 0)
     wait(2000)
     chassis.brake()
-    left_arm.run_time(speed=1000000, time=4000)
+    left_arm.run_time(speed=400, time=4000)
     chassis.settings(straight_speed=400)
     chassis.straight(distance=-450)
 
@@ -141,6 +148,7 @@ def run33():
     chassis.straight(-40)
     chassis.turn(-40)
     chassis.straight(-30)
+
 def run4():
     chassis.settings(straight_speed=180)
     chassis.straight(700)
@@ -173,6 +181,6 @@ elif selected == 4:
 elif selected == 33:
     run33()
 elif selected == 99:
-    run9()
+    stats()
 elif selected == 9:
     run9()
