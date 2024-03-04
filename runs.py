@@ -78,7 +78,7 @@ def run2():
 
 
 def run3():
-    chassis.settings(straight_speed=250)
+    chassis.settings(straight_speed=350)
     chassis.straight(455)
     chassis.turn(-65)
     #chassis.turn(10)
@@ -144,7 +144,9 @@ def run33():
     chassis.straight(710) 
     chassis.straight(-115)
     chassis.turn(60)
-    chassis.turn(-55)
+    chassis.turn(-30)
+    chassis.straight(-50)
+    chassis.turn(-25)
     chassis.straight(-40)
     chassis.turn(-40)
     chassis.straight(-50)
@@ -153,8 +155,8 @@ def run33():
     chassis.turn(-30)
     chassis.straight(30)
     chassis.turn(60)
-    chassis.straight(310)
-    right_arm.run_angle(200,100)
+    chassis.straight(400)
+    #right_arm.run_angle(500,200)
 
 
 def run4():
