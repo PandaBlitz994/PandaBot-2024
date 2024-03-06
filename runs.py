@@ -139,7 +139,7 @@ def run33():
     chassis.settings(straight_speed=250)
     chassis.straight(69)
     chassis.turn(45)
-    chassis.straight(455)
+    chassis.straight(440)
     chassis.turn(-65)
     chassis.straight(710) 
     chassis.straight(-115)
@@ -153,8 +153,23 @@ def run33():
     chassis.turn(-30)
     chassis.straight(30)
     chassis.turn(60)
-    chassis.straight(310)
-    right_arm.run_angle(200,100)
+    chassis.straight(345)
+    right_arm.run_angle(200,150)
+    right_arm.run_angle(200,-150)
+    chassis.straight(400)
+    chassis.turn(-60)
+    left_arm.run_angle(200,180)
+    left_arm.run_angle(200,-180)
+    chassis.turn(-20)
+    chassis.settings(1000)
+    chassis.straight(700)
+
+    # chassis.straight(240)
+    # right_arm.run_angle(500,200)
+    # right_arm.run_angle(500,-250)
+    # chassis.straight(230)
+    # chassis.turn(-90)
+    # chassis.straight(230)
 
 
 def run4():
@@ -166,6 +181,8 @@ def run4():
 def run9():
     chassis.settings(straight_speed=500)
     chassis.straight(10000)
+
+
 
 def stats():
     precent = hub.battery.current() / 2100 * 100
