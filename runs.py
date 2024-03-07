@@ -155,8 +155,16 @@ def run33():
     chassis.turn(-30)
     chassis.straight(30)
     chassis.turn(60)
-    chassis.straight(400)
+    chassis.straight(325)
+    right_arm.run_angle(speed=200, rotation_angle=200)
+    right_arm.run_angle(speed=200, rotation_angle=-200)
     #right_arm.run_angle(500,200)
+    chassis.straight(430)
+    chassis.turn(-60)
+    left_arm.run_angle(speed=200, rotation_angle=200)
+    left_arm.run_angle(speed=200, rotation_angle=-200)
+    #chassis.straight(1000)
+
 
 
 def run4():
