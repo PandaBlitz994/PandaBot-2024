@@ -149,8 +149,6 @@ elif selected == 4:
     run4()
 elif selected == 5:
     run5()
-elif selected == 33:
-    run33()
 elif selected == 99:
     stats()
 elif selected == 9:
