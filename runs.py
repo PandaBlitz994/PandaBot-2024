@@ -16,6 +16,19 @@ right_color= ColorSensor(Port.A)
 left_color= ColorSensor(Port.E)
 chassis.use_gyro(True)
 
+
+def follow_line_with_time(time, speed, kp, side, sensor):
+    target = 50
+    left_motor.reset_angle()
+    if side == "left":
+        kp *= -1
+    while (left_motor.angle() < distance):
+        error = target - sensor.reflection()
+        left_motor.dc(int(speed + error * kp))
+        right_motor.dc(int(speed - error * kp))
+    left_motor.stop()
+    right_motor.stop()
+
 def follow_line(distance, speed, kp, side, sensor):
     target = 50
     left_motor.reset_angle()
@@ -40,22 +53,17 @@ def until_black(detect_sensor, speed, kp, side, follow_sensor):
     right_motor.stop()
 
 def until_black_no_follow(detect_sensor, speed):
-    while detect_sensor.reflection() > 20:
+    while detect_sensor.reflection() > 10:
         chassis.drive(speed=speed,turn_rate=0)
-    chassis.stop
+    chassis.brake()
+
+def until_bezh(detect_sensor, speed):
+    while 45 < detect_sensor.reflection() < 50:
+        chassis.drive(speed=speed,turn_rate=0)
+    chassis.brake()
     
 def run9():
-    chassis.settings(straight_speed=400)
     chassis.drive(900, 0)
-
-        
-        
-
-def run9():
-    chassis.settings(straight_speed=400)
-    chassis.drive(900, 0)
-
-        
         
 
 def run1():
@@ -164,23 +172,28 @@ def run33():
     chassis.settings(1000)
     chassis.straight(700)
 
-    # chassis.straight(240)
-    # right_arm.run_angle(500,200)
-    # right_arm.run_angle(500,-250)
-    # chassis.straight(230)
-    # chassis.turn(-90)
-    # chassis.straight(230)
-
-
 def run4():
-    chassis.settings(straight_speed=180)
-    chassis.straight(700)
-    chassis.straight(-700)
-    
-
-def run9():
+    chassis.settings(straight_speed=300)
+    chassis.straight(500)
+    until_black_no_follow(right_color,300)
+    chassis.straight(100)
+    chassis.turn(-60)
+    right_arm.run_time(speed=300,time=1500)
+    chassis.straight(-80)
+    chassis.turn(80)
     chassis.settings(straight_speed=500)
-    chassis.straight(10000)
+    chassis.straight(-650)
+
+    #chassis.straight(750)
+    #chassis.settings(straight_speed=400)f
+    #chassis.straight(-750)
+    
+def run5():
+    right_arm.run_time(speed=-700,time=4000)
+
+# def run9():
+#     chassis.settings(straight_speed=500)
+#     chassis.straight(10000)
 
 
 
@@ -192,7 +205,7 @@ def stats():
 
 
 
-selected = hub_menu(1, 2, 3, 4,33, 9, 99)
+selected = hub_menu(1, 2, 3, 4, 5, 33, 9, 99)
 
 
 if selected == 1:
@@ -203,6 +216,8 @@ elif selected == 3:
     run3()
 elif selected == 4:
     run4()
+elif selected == 5:
+    run5()
 elif selected == 33:
     run33()
 elif selected == 99:
