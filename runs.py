@@ -136,7 +136,7 @@ def stats():
 
 
 
-selected = hub_menu(1, 2, 3, 4, 5, 33, 9, 99)
+selected = hub_menu(1, 2, 3, 4, 5, 9, 99)
 
 
 if selected == 1:
