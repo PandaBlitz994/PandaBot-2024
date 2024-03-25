@@ -140,9 +140,22 @@ def run6():
     chassis.straight(-750)
 
     
-def run7():
+def run6():
     chassis.settings(straight_speed=250)
-    
+    chassis.straight(700)
+    chassis.turn(-15)
+    chassis.straight(50)
+    wait(1000)
+    chassis.straight(-50)
+    chassis.turn(15)
+    chassis.settings(straight_speed=550)
+    chassis.straight(-700)
+
+
+   
+def run8():
+    chassis.settings(straight_speed=250)
+   
     until_black_no_follow(right_color,200)
     chassis.turn(10)
     chassis.straight(180)
@@ -157,8 +170,22 @@ def run7():
     chassis.straight(-500)
 
 
+def run7():
+    chassis.settings(straight_speed=250)
+    chassis.straight(350)
+    chassis.turn(-40)
+    chassis.straight(45)
+    chassis.turn(75)
+    chassis.straight(30)
+    chassis.settings(straight_speed=700)
+    chassis.straight(-600)
+
+
 def run9():
         until_bezh(right_color, 200)
+
+
+
 
 
 
@@ -170,7 +197,13 @@ def stats():
 
 
 
-selected = hub_menu(1, 2, 3, 4, 5, 6, 7, 9, 99)
+
+
+
+
+selected = hub_menu(1, 2, 3, 4, 5, 6, 7, 8, 9, 99)
+
+
 
 
 if selected == 1:
@@ -187,7 +220,10 @@ elif selected == 6:
     run6()
 elif selected == 7:
     run7()
+elif selected == 8:
+    run8()
 elif selected == 99:
     stats()
 elif selected == 9:
     run9()
+
