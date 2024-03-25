@@ -71,9 +71,10 @@ def run3():
     chassis.straight(-500)
 
 def run2():
-    chassis.settings(straight_speed=200)
-    chassis.straight(1000)
-    chassis.straight(-1000)
+    chassis.settings(straight_speed=400)
+    chassis.straight(700)
+    chassis.settings(straight_speed=700)
+    chassis.straight(-700)
 
 
 def run1():
@@ -87,7 +88,7 @@ def run1():
     chassis.settings(straight_speed=400)
     chassis.turn(-20)
     chassis.straight(30)
-    chassis.straight(distance=-450)
+    chassis.straight(distance=-650)
 
 def run4():
     chassis.drive(300,0)
