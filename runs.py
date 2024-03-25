@@ -64,7 +64,7 @@ def until_bezh(detect_sensor, speed):
     
 
         
-def run1():
+def run3():
     chassis.settings(straight_speed=700)
     chassis.straight(500)
     right_arm.run_angle(150, 135)
@@ -76,7 +76,7 @@ def run2():
     chassis.straight(-1000)
 
 
-def run3():
+def run1():
     chassis.settings(straight_speed=150)
     chassis.straight(315)
     right_arm.run_angle(speed=120, rotation_angle=130)
