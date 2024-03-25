@@ -83,12 +83,22 @@ def run3():
     chassis.drive(200, 0)
     wait(2000)
     chassis.brake()
-    left_arm.run_time(speed=400, time=4000)
+    left_arm.run_time(speed=2000, time=5000)
     chassis.settings(straight_speed=400)
+    chassis.turn(-20)
+    chassis.straight(30)
     chassis.straight(distance=-450)
 
 def run4():
-    chassis.settings(straight_speed=200)
+    chassis.drive(300,0)
+    wait(2000)
+    chassis.brake()
+    chassis.turn(-10)
+    chassis.straight(400)
+    right_arm.run_angle(200, 180)
+    chassis.straight(20)
+    chassis.settings(straight_speed=500)
+    chassis.straight(-700)
 
 def run5():
     right_arm.run_time(-200, 1000, wait=False)
