@@ -82,7 +82,6 @@ def run2():
     wait(1000)
     chassis.brake()
     left_arm.run_angle(speed=120, rotation_angle=-130)
-    chassis.straight(100)
     chassis.drive(-1000, 0)
     wait(2500)
     chassis.brake()
