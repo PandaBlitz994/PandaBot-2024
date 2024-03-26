@@ -67,21 +67,25 @@ def until_bezh(detect_sensor, speed):
     chassis.brake()
 
 
-def run3():
+def run2():
     chassis.settings(straight_speed=700)
     chassis.straight(500)
     right_arm.run_angle(150, 135)
     chassis.straight(-250)
     chassis.turn(20)
+    right_arm.run_angle(speed=120, rotation_angle=-130)
     chassis.straight(100)
     chassis.turn(10)
-
-
-def run2():
-    chassis.settings(straight_speed=400)
-    chassis.straight(800)
-    chassis.settings(straight_speed=699)
-    chassis.straight(-1000)
+    chassis.straight(200)
+    chassis.turn(-30)
+    chassis.drive(500, 0)
+    wait(1000)
+    chassis.brake()
+    left_arm.run_angle(speed=120, rotation_angle=-130)
+    chassis.straight(100)
+    chassis.drive(-1000, 0)
+    wait(2500)
+    chassis.brake()
 
 
 def run1():
@@ -98,7 +102,7 @@ def run1():
     chassis.straight(distance=-650)
 
 
-def run4():
+def run3():
     chassis.drive(300, 0)
     wait(2000)
     chassis.brake()
@@ -110,7 +114,7 @@ def run4():
     chassis.straight(-700)
 
 
-def run5():
+def run4():
     right_arm.run_time(-200, 1000, wait=False)
     until_black_no_follow(right_color, 300)
     chassis.turn(-90)
@@ -146,14 +150,9 @@ def run5():
     chassis.straight(700)
 
 
-def run6():
-    chassis.settings(straight_speed=250)
-    chassis.straight(750)
-    wait(1000)
-    chassis.straight(-750)
 
 
-def run6():
+def run5():
     chassis.settings(straight_speed=250)
     chassis.straight(700)
     chassis.turn(-15)
@@ -165,7 +164,7 @@ def run6():
     chassis.straight(-700)
 
 
-def run8():
+def run7():
     chassis.settings(straight_speed=250)
 
     until_black_no_follow(right_color, 200)
@@ -182,7 +181,7 @@ def run8():
     chassis.straight(-500)
 
 
-def run7():
+def run6():
     chassis.settings(straight_speed=250)
     chassis.straight(350)
     chassis.turn(-40)
